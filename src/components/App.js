@@ -5,17 +5,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "para",
-      message:
-        "class components of react and state management in class components"
+      paragraph: "Hello"
     };
+  }
+
+  updateData() {
+    this.setState({
+      paragraph:
+        "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+    });
   }
 
   render() {
     return (
       <div id="main">
-        <button id="click" onClick={this.state.message}>
-          click me
+        <p id="para">{this.state.paragraph}</p>
+        <button id="click" onClick={() => this.updateData()}>
+          click Me
         </button>
       </div>
     );
