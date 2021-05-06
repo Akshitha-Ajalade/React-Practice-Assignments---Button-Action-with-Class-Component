@@ -5,6 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: "para",
       message:
         "class components of react and state management in class components"
     };
@@ -13,7 +14,6 @@ class App extends Component {
   render() {
     return (
       <div id="main">
-        <p id="para">{this.state.message}</p>
         <button id="click" onClick={this.state.message}>
           click me
         </button>
