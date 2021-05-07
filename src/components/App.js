@@ -5,22 +5,41 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      paragraph: " "
+      visible: false
     };
   }
 
-  updateData() {
-    this.setState({
-      paragraph:
-        "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
-    });
-  }
+  // updateData() {
+  //   this.setState({
+  //     paragraph:
+  //       "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+  //   });
+  // }
+
+  // updateData2() {
+  //   this.setState({
+  //     paragraph: " "
+  //   });
+  // }
 
   render() {
     return (
       <div id="main">
-        <p id="para">{this.state.paragraph}</p>
-        <button id="click" onClick={() => this.updateData()}>
+        {this.state.visible ? (
+          <p id="para">
+            Hello, I've learnt to use the full-stack evaluation tool. This makes
+            me so happy
+          </p>
+        ) : (
+          ""
+        )}
+
+        <button
+          id="click"
+          onClick={() => {
+            this.setState({ visible: !this.state.visible });
+          }}
+        >
           click Me
         </button>
       </div>
